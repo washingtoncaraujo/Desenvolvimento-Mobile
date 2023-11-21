@@ -1,0 +1,5 @@
+Sistemas usados:
+
+- Banco de dados: MySql - backend_semana8;
+- Insomnia: Semana_8/My Cllection_Semana_8;
+- GitHub: desenvolvimento-Mobile/Servidor,
