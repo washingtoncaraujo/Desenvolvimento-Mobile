@@ -7,7 +7,7 @@ CREATE TABLE clientes
     sobrenome VARCHAR(45) NOT NULL,
     email VARCHAR(45) NOT NULL,
     idade INT DEFAULT NULL,
-    foto VARCHAR(60) 
+    foto VARCHAR(60) NOT NULL
 );
 
 CREATE TABLE produtos 

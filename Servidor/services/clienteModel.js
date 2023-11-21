@@ -12,18 +12,18 @@ const findAll = async () => {
 };
 // Atualização de dados no BD
 const update = async (cliente) => {
-    const query = 'UPDATE clientes SET nome = ?, sobrenome = ?, email = ?, idade = ? WHERE id = ?';
+    const query = 'UPDATE clientes SET nome = ?, sobrenome = ?, email = ?, idade = ?, foto = ? WHERE id = ?';
     const isOk = await (await connection).execute(query,
         [cliente.nome, cliente.sobrenome, cliente.email, cliente.idade,
-            cliente.id]);
+            cliente.id, cliente.foto]);
     return isOk[0].affectedRows === 1;
 };
 // Inserção de dados no BD
 const save = async (cliente) => {
-    const query = 'INSERT INTO clientes(nome, sobrenome, email, idade) VALUES (?, ?, ?, ?)';
+    const query = 'INSERT INTO clientes(nome, sobrenome, email, idade, foto) VALUES (?, ?, ?, ?, ?)';
     const isOk = await (await connection).execute(query,
         [cliente.nome, cliente.sobrenome, cliente.email,
-            cliente.idade]);
+            cliente.idade, cliente.foto]);
     return isOk[0].affectedRows === 1;
 };
 // Exclusão de dados no BD
