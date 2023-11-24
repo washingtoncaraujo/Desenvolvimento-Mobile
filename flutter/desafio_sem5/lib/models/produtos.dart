@@ -12,4 +12,15 @@ class Produto{
     required this.preco,
     required this.data_atualizado
   });
+
+  static Map<String, dynamic> toJson(Produto produto) {
+    return {
+        'id': produto.id.isEmpty ? null : produto.id,
+        'nome': produto.nome,
+        'descricao': produto.descricao,
+        'preco': produto.preco,
+        'data_atualizado': produto.data_atualizado
+ };
+
+}
 }

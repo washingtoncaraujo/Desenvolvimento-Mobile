@@ -10,7 +10,7 @@ const ProdutoList({super.key});
 
 @override
 Widget build(BuildContext context) {
-final ProductProvider produto = Provider.of(context);
+final ProdutoProvider produto = Provider.of(context);
 
 return Scaffold(
 appBar: AppBar(

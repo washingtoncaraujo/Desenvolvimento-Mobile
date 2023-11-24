@@ -9,24 +9,21 @@ import 'package:desafio_sem5/views/produtos_lista.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    
-
   return MultiProvider(
     providers: [
     ChangeNotifierProvider(create: (ctx) => ClientProvider()),
-     ChangeNotifierProvider(create: (ctx) => ProductProvider())
+     ChangeNotifierProvider(create: (ctx) => ProdutoProvider())
     ],
     child: MaterialApp(
+    
     title: 'Flutter Demo',
     theme: ThemeData(
     appBarTheme: const AppBarTheme(backgroundColor: Color.fromARGB(255, 140, 29, 29)),
@@ -44,54 +41,55 @@ class MyApp extends StatelessWidget {
           title: const Text('Bem-Vindo!'),
         ),
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Builder(
-                  builder: (BuildContext context) {
-                    return ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).pushNamed(Routes.Cliente);
-                      },
-                      child: const Text('Lista de clientes'),
-                      style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.white, backgroundColor: const Color.fromARGB(255, 243, 191, 33), // Cor do texto
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(32.0),
-                        ), // Forma do botão
-                        padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20), // Padding
-                        textStyle: TextStyle(
-                          fontSize: 24, // Tamanho da fonte
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Builder(
+                    builder: (BuildContext context) {
+                      return ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(Routes.Cliente);
+                        },
+                        child: const Text('Lista de clientes'),
+                        style: ElevatedButton.styleFrom(
+                          foregroundColor: Colors.white, backgroundColor: const Color.fromARGB(255, 243, 191, 33), // Cor do texto
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(32.0),
+                          ), // Forma do botão
+                          padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20), // Padding
+                          textStyle: TextStyle(
+                            fontSize: 24, // Tamanho da fonte
+                          ),
                         ),
-                      ),
-                    );
-                  },
-                ),
-              Builder(
-                  builder: (BuildContext context) {
-                    return ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).pushNamed(Routes.Produto);
-                      },
-                      child: const Text('Lista de Produtos'),
-                      style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.white, backgroundColor: const Color.fromARGB(255, 243, 191, 33), // Cor do texto
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(32.0),
-                        ), // Forma do botão
-                        padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20), // Padding
-                        textStyle: TextStyle(
-                          fontSize: 24, // Tamanho da fonte
+                      );
+                    },
+                  ),
+                Builder(
+                    builder: (BuildContext context) {
+                      return ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(Routes.Produto);
+                        },
+                        child: const Text('Lista de Produtos'),
+                        style: ElevatedButton.styleFrom(
+                          foregroundColor: Colors.white, backgroundColor: const Color.fromARGB(255, 243, 191, 33), // Cor do texto
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(32.0),
+                          ), // Forma do botão
+                          padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20), // Padding
+                          textStyle: TextStyle(
+                            fontSize: 24, // Tamanho da fonte
+                          ),
                         ),
-                      ),
-                    );
-                  },
-                ),
-            ],
-          ),
+                      );
+                    },
+                  ),
+              ],
+            ),
         ),
       
   )));
   
 }
 }
+

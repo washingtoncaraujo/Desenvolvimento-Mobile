@@ -3,6 +3,7 @@ import 'package:desafio_sem5/providers/product_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+// ignore: camel_case_types
 class Formulaire_product extends StatefulWidget {
 const Formulaire_product({super.key});
 @override
@@ -10,6 +11,7 @@ State<Formulaire_product> createState() => _FormulaireState();
 }
 
 class _FormulaireState extends State<Formulaire_product> {
+// ignore: non_constant_identifier_names
 final _formulario_product = GlobalKey<FormState>();
 final Map<String, String> _dadosFormulario = {};
 
@@ -33,7 +35,7 @@ IconButton(
 onPressed: () {
 if (_formulario_product.currentState!.validate()) {
 _formulario_product.currentState!.save();
-Provider.of<ProductProvider>(context, listen: false).put(
+Provider.of<ProdutoProvider>(context, listen: false).put(
 Produto(
 id: _dadosFormulario['id'] ?? '',
 nome: _dadosFormulario['nome'] ?? '',

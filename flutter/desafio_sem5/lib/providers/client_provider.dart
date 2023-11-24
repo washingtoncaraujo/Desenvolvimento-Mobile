@@ -1,37 +1,25 @@
-import 'dart:math';
-import 'package:desafio_sem5/data/standard_client.dart';
 import 'package:desafio_sem5/models/cliente.dart';
 import 'package:flutter/material.dart';
 
+import '../service/cliente_service.dart';
+
 class ClientProvider with ChangeNotifier {
-final Map<String, Cliente> _itens = {...STANDARD_CLIENTS};
-List<Cliente> get todos {
-return [..._itens.values];
-}
+ final ClienteService _service = ClienteService();
+ Map<String, Cliente> _itens = {};
+ ClientProvider() {
+ _service.encontrar().then((value) => {_itens = value, notifyListeners()});
+ }
 
 
-void put(Cliente cliente) {
-if (cliente.id.trim().isNotEmpty &&
-_itens.containsKey(cliente.id)) {
-_itens.update(cliente.id, (_) => cliente);
-} else {
-final id = Random().nextDouble().toString();
-_itens.putIfAbsent(
-id,
-() => Cliente(
-id: id,
-nome: cliente.nome,
-sobrenome: cliente.sobrenome,
-email: cliente.email,
-foto: cliente.foto));
-}
-notifyListeners();
-}
+void put(Cliente cliente) async {
+ await _service.salvar(cliente);
+ _service.encontrar().then((value) => {_itens = value, notifyListeners()});
+ }
 
-void remove(String id) {
-_itens.remove(id);
-notifyListeners();
-}
+
+ void remove(String id) {
+ _service.remover(id).then((value) => {_itens = value, notifyListeners()});
+ }
 
 int get contador {
 return _itens.length;
