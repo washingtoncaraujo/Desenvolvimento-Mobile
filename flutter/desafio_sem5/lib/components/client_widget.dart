@@ -34,10 +34,7 @@ CircleAvatar(backgroundImage: NetworkImage(cliente.foto));
 return ListTile(
 leading: avatar, title: Text("${cliente.nome} ${cliente.sobrenome}"), subtitle: Text(cliente.email),
 trailing: SizedBox(width: 100, child: Row(children: <Widget>[
-
-
 IconButton( onPressed: () { Navigator.of(context).pushNamed(Routes.FORMULARIO_cliente, arguments: cliente); }, icon: const Icon(Icons.edit), color: Colors.green),
-
 IconButton(
 onPressed: () {
 showDialog(

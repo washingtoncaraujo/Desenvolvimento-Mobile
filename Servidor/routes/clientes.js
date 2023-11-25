@@ -16,13 +16,12 @@ router.get('/', clienteController.findAll);
 /* rota POST clientes*/
 router.post('/', nomeMiddleware.validateName,
     sobrenomeMiddleware.validateFamilyName,
-    idadeMiddleware.validateAge,
     clienteController.save);
 
 /* rota PUT clientes*/
 router.put('/', nomeMiddleware.validateName,
     sobrenomeMiddleware.validateFamilyName,
-    idadeMiddleware.validateAge, clienteController.update);
+    clienteController.update);
 
 /* rota DELETE clientes*/
 router.delete('/:id', clienteController.remove);

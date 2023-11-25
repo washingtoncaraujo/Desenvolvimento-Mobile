@@ -13,12 +13,12 @@ class ClienteDAOMySQL implements ClienteDAO {
  Iterable lista = json.decode(resposta.body);
  var map = <String, Cliente>{};
  for (var item in lista) {
- map[item['id'].toString()] = Cliente(
- id: item['id'].toString(),
- nome: item['nome'],
- sobrenome: item['sobrenome'],
- email: item['email'],
- foto: item['foto']);
+    map[item['id'].toString()] = Cliente(
+    id: item['id'].toString(),
+    nome: item['nome'],
+    sobrenome: item['sobrenome'],
+    email: item['email'],
+    foto: item['foto']);
  }
  return map;
  }
@@ -35,12 +35,12 @@ class ClienteDAOMySQL implements ClienteDAO {
     var uri = Uri.parse('http://localhost:3000/clientes');
     final jsonText = jsonEncode(Cliente.toJson(cliente));
     if (cliente.id.trim().isEmpty) {
-    var response = await http.post(uri,
-    body: jsonText, headers: {"Content-Type": "application/json"});
-    if (response.statusCode != 200) throw Exception("Erro REST API");
+        var response = await http.post(uri,
+        body: jsonText);//, headers: {"Content-Type": "application/json"});
+        if (response.statusCode != 200) throw Exception("Erro REST API");
     } else {
-    var response = await http.put(uri, body: jsonText, headers: {"Content-Type": "application/json"});
-    if (response.statusCode != 200) throw Exception("Erro REST API");
+        var response = await http.put(uri, body: jsonText, headers: {"Content-Type": "application/json"});
+        if (response.statusCode != 200) throw Exception("Erro REST API");
     }
  }
 

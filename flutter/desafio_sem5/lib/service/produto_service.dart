@@ -27,11 +27,5 @@ class ProdutoService {
     throw ExceptionLayer('O nome deve possuir no máximo $max caracteres.');
     }
  }
- validateEmail(String email) {
-    if (email.isEmpty) {
-    throw ExceptionLayer('O e-mail é obrigatório.');
-    } else if (!email.contains('@')) {
-    throw ExceptionLayer('O e-mail deve possuir @.');
-    }
- }
+ 
 }
