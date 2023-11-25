@@ -19,12 +19,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
   return MultiProvider(
     providers: [
-    ChangeNotifierProvider(create: (ctx) => ClientProvider()),
-     ChangeNotifierProvider(create: (ctx) => ProdutoProvider())
+        ChangeNotifierProvider(create: (ctx) => ClientProvider()),
+        ChangeNotifierProvider(create: (ctx) => ProdutoProvider())
     ],
     child: MaterialApp(
     
-    title: 'Flutter Demo',
+    title: 'BD flutter',
     theme: ThemeData(
     appBarTheme: const AppBarTheme(backgroundColor: Color.fromARGB(255, 140, 29, 29)),
     useMaterial3: true,
