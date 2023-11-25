@@ -49,8 +49,8 @@ onPressed: () => Navigator.of(context).pop(), child: const Text('Não'),
 FloatingActionButton(
 onPressed: () => Navigator.of(context).pop(), child: const Text('Sim'),
 )],),
-).then((confirmado) => {
-if (confirmado) {
+).then((confirmed) => {
+if (confirmed) {
 Provider.of<ClientProvider>(context, listen: false)
 .remove(cliente.id)
 }
