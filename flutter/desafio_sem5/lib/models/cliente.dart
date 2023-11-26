@@ -6,7 +6,7 @@ final String email;
 final String foto;
 
 const Cliente({
-required this.id,
+this.id ="",
 required this.nome,
 required this.sobrenome,
 required this.email,

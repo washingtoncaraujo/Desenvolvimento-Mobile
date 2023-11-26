@@ -13,7 +13,7 @@ const findAll = async () => {
 };
 // Atualização de dados no BD
 const update = async (produtos) => {
-    const query = 'UPDATE produtos SET nome = ?, descricao = ?, preco = ?, data_atual = ? WHERE id = ?';
+    const query = 'UPDATE produtos SET nome = ?, descricao = ?, preco = ?, data_atualizado = ? WHERE id = ?';
     const isOk = await (await connection).execute(query,
         [produtos.nome, produtos.descricao, produtos.preco, produtos.data_atual,
             produtos.id]);
@@ -21,10 +21,10 @@ const update = async (produtos) => {
 };
 // Inserção de dados no BD
 const save = async (produtos) => {
-    const query = 'INSERT INTO produtos(nome, descricao, preco, data_atual) VALUES (?, ?, ?, ?)';
+    const query = 'INSERT INTO produtos(nome, descricao, preco, data_atualizado) VALUES (?, ?, ?, ?)';
     const isOk = await (await connection).execute(query,
         [produtos.nome, produtos.descricao, produtos.preco,
-            produtos.data_atual]);
+            produtos.data_atualizado]);
     return isOk[0].affectedRows === 1;
 };
 // Exclusão de dados no BD

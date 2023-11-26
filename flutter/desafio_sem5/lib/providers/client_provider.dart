@@ -1,6 +1,5 @@
 import 'package:desafio_sem5/models/cliente.dart';
 import 'package:flutter/material.dart';
-
 import '../service/cliente_service.dart';
 
 class ClientProvider with ChangeNotifier {

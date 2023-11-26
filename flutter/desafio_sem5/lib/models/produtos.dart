@@ -1,3 +1,4 @@
+
 class Produto{
   final String id;
   final String nome;
@@ -6,7 +7,7 @@ class Produto{
   final String data_atualizado;
 
   const Produto({
-    required this.id,
+    this.id = "",
     required this.nome,
     required this.descricao,
     required this.preco,

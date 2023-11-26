@@ -36,7 +36,7 @@ class ClienteDAOMySQL implements ClienteDAO {
     final jsonText = jsonEncode(Cliente.toJson(cliente));
     if (cliente.id.trim().isEmpty) {
         var response = await http.post(uri,
-        body: jsonText);//, headers: {"Content-Type": "application/json"});
+        body: jsonText, headers: {"Content-Type": "application/json"});
         if (response.statusCode != 200) throw Exception("Erro REST API");
     } else {
         var response = await http.put(uri, body: jsonText, headers: {"Content-Type": "application/json"});
