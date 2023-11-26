@@ -66,8 +66,8 @@ class MyApp extends StatelessWidget {
                     },
                   ),
                 Container(
-                  width: 5,
-                  height: 5,
+                  width: 6,
+                  height: 6,
                 ),
                 Builder(
                     builder: (BuildContext context) {
