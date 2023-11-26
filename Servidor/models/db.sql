@@ -6,7 +6,7 @@ CREATE TABLE clientes
     nome VARCHAR(30) NOT NULL,
     sobrenome VARCHAR(45) NOT NULL,
     email VARCHAR(45) NOT NULL,
-    foto VARCHAR(60) NOT NULL
+    foto VARCHAR(200) NOT NULL
 );
 
 CREATE TABLE produtos

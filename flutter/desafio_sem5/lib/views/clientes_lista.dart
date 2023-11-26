@@ -14,7 +14,7 @@ final ClientProvider clientes = Provider.of(context);
 return Scaffold(
 appBar: AppBar(
 toolbarHeight: 100,
-      title: const Text('Lista de Produtos'),
+      title: const Text('Lista de Clientes'),
       actions: <Widget>[
        // IconButton(onPressed: () {Navigator.of(context).pushNamed(Routes.FORMULARIO_produto);}, icon: const Icon(Icons.add))
         Transform.scale(

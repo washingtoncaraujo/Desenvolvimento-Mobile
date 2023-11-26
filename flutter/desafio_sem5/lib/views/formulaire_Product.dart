@@ -29,7 +29,7 @@ Widget build(BuildContext context) {
   if (produto != null) { _carregaDadosFormulario(produto as Produto); }
   return Scaffold(
   appBar: AppBar(
-  title: const Text('Formulario de clientes'),
+  title: const Text('Formulario de Produtos'),
   actions: <Widget>[
   Transform.scale(
   scale: 2.0, // Ajuste este valor conforme necessário
