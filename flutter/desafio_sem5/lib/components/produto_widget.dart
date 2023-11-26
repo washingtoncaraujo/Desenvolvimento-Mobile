@@ -1,5 +1,4 @@
 import 'package:desafio_sem5/models/produtos.dart';
-import 'package:desafio_sem5/providers/client_provider.dart';
 import 'package:desafio_sem5/providers/product_provider.dart';
 import 'package:desafio_sem5/routes/routes_cliente.dart';
 import 'package:flutter/material.dart';

@@ -15,7 +15,7 @@ const findAll = async () => {
 const update = async (produtos) => {
     const query = 'UPDATE produtos SET nome = ?, descricao = ?, preco = ?, data_atualizado = ? WHERE id = ?';
     const isOk = await (await connection).execute(query,
-        [produtos.nome, produtos.descricao, produtos.preco, produtos.data_atual,
+        [produtos.nome, produtos.descricao, produtos.preco, produtos.data_atualizado,
             produtos.id]);
     return isOk[0].affectedRows === 1;
 };
