@@ -22,12 +22,11 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (ctx) => ClientProvider()),
         ChangeNotifierProvider(create: (ctx) => ProdutoProvider())
     ],
-    child: MaterialApp(
-    
+    child: MaterialApp(    
     title: 'BD flutter',
     theme: ThemeData(
-    appBarTheme: const AppBarTheme(backgroundColor: Color.fromARGB(255, 140, 29, 29)),
-    useMaterial3: true,
+        appBarTheme: const AppBarTheme(backgroundColor: Color.fromARGB(255, 243, 191, 33)),
+        useMaterial3: true,
     ),
     routes: {
         Routes.Cliente: (_) => const ClientsList(),
@@ -37,10 +36,12 @@ class MyApp extends StatelessWidget {
       },
     //home: const ClientsList(),
     home: Scaffold(
+      backgroundColor: Color.fromARGB(255, 88, 88, 86),
         appBar: AppBar(
           title: const Text('Bem-Vindo!'),
         ),
-        body: Center(
+        body:  
+        Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -50,7 +51,7 @@ class MyApp extends StatelessWidget {
                         onPressed: () {
                           Navigator.of(context).pushNamed(Routes.Cliente);
                         },
-                        child: const Text('Lista de clientes'),
+                        child: const Text('Clientes'),
                         style: ElevatedButton.styleFrom(
                           foregroundColor: Colors.white, backgroundColor: const Color.fromARGB(255, 243, 191, 33), // Cor do texto
                           shape: RoundedRectangleBorder(
@@ -58,19 +59,23 @@ class MyApp extends StatelessWidget {
                           ), // Forma do botão
                           padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20), // Padding
                           textStyle: TextStyle(
-                            fontSize: 24, // Tamanho da fonte
+                          fontSize: 24, // Tamanho da fonte
                           ),
                         ),
                       );
                     },
                   ),
+                Container(
+                  width: 5,
+                  height: 5,
+                ),
                 Builder(
                     builder: (BuildContext context) {
                       return ElevatedButton(
                         onPressed: () {
                           Navigator.of(context).pushNamed(Routes.Produto);
                         },
-                        child: const Text('Lista de Produtos'),
+                        child: const Text('Produtos'),
                         style: ElevatedButton.styleFrom(
                           foregroundColor: Colors.white, backgroundColor: const Color.fromARGB(255, 243, 191, 33), // Cor do texto
                           shape: RoundedRectangleBorder(
@@ -92,4 +97,5 @@ class MyApp extends StatelessWidget {
   
 }
 }
+
 
