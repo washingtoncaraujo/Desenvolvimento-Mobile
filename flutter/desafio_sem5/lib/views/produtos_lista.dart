@@ -9,13 +9,20 @@ const ProdutoList({super.key});
 @override
 Widget build(BuildContext context) {
 final ProdutoProvider produto = Provider.of(context);
-
 return Scaffold(
 appBar: AppBar(
       toolbarHeight: 100,
       title: const Text('Lista de Produtos'),
       actions: <Widget>[
-        IconButton(onPressed: () {Navigator.of(context).pushNamed(Routes.FORMULARIO_produto);}, icon: const Icon(Icons.add))
+       // IconButton(onPressed: () {Navigator.of(context).pushNamed(Routes.FORMULARIO_produto);}, icon: const Icon(Icons.add))
+        Transform.scale(
+        scale: 2.0, // Ajuste este valor conforme necessário
+        child: IconButton(
+          onPressed: () { Navigator.of(context).pushNamed(Routes.FORMULARIO_produto);
+          },
+          icon: const Icon(Icons.add),
+        ),
+        )
         ],
       ),
       body: ListView.builder(

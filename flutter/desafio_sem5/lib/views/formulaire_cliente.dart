@@ -31,7 +31,9 @@ Widget build(BuildContext context) {
   appBar: AppBar(
   title: const Text('Formulario de clientes'),
   actions: <Widget>[
-  IconButton(
+  Transform.scale(
+  scale: 2.0, // Ajuste este valor conforme necessário
+  child: IconButton(
   onPressed: () {
   if (_formulario.currentState!.validate()) {
     _formulario.currentState!.save();
@@ -43,10 +45,10 @@ Widget build(BuildContext context) {
       email: _dadosFormulario['email'] ?? '',
       foto: _dadosFormulario['foto'] ?? ''),
   );
-  print(cliente);
   Navigator.of(context).pop();
   }},
-  icon: const Icon(Icons.save))
+  icon: const Icon(Icons.save),)
+  )
   ],),
   body: Padding(
             padding: const EdgeInsets.all(10),
